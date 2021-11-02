@@ -13,6 +13,10 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * Consider containerization
 * Treat the code as if it was going to be sent to production - what would you do to ensure it is production-ready.
 
+#### Assumptions:
+* Assume that the database will have a high number of tasks and users.
+* Feel free to share other assumptions you made during development.
+
 #### Bonus Tasks:  
 Setup a scheduled job to check all tasks in the Database - those that have a status of "pending" and who date_time 
 has passed - print it to the console
