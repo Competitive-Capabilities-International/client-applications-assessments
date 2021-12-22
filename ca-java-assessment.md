@@ -34,7 +34,7 @@ We should be able to clone the repo / download artifacts and run it without any 
 
 As a guide, below are the curl commands with the REST endpoints we are expecting to test against.  You can use these urls as a guildeline on how to design/develop your REST endpoints.  
 
-If you do not have access to curl, you can use the Postman client(See https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java%20Assessment.postman_collection.json) (or any other HTTP client) to perform these 
+If you do not have access to curl, you can use the Postman client(https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java-Assessment.postman_collection.json) (or any other HTTP client) to perform these 
 calls in 
 order to test your application.
 
