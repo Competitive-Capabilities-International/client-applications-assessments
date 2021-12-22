@@ -6,7 +6,7 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * The application should be able to list/create/update users via REST.
 * The application should be able to list/create/update/delete tasks for users via REST.
 * Data must be persisted to a relational database.
-* You can use Frameworks(Spring Framework, Java EE etc.), Libraries etc.
+* You can use Frameworks(Spring Framework, Java EE etc.) Libraries etc.
 
 #### Considerations:
 * Consider database migration
@@ -34,29 +34,41 @@ We should be able to clone the repo / download artifacts and run it without any 
 
 As a guide, below are the curl commands with the REST endpoints we are expecting to test against.  You can use these urls as a guildeline on how to design/develop your REST endpoints.  
 
-If you do not have access to curl, you can use the Postman client (or any other HTTP client) to perform these calls in 
+If you do not have access to curl, you can use the Postman client(See Java Assessment.postman_collection.json) (or any other HTTP client) to perform these 
+calls in 
 order to test your application.
 
 ---
 
 #### Create user
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"username":"jsmith","first_name" : "John", "last_name" : "Smith"}'http://localhost:8080/api/user
+curl --location --request POST 'http://localhost:8080/api/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "jsmith",
+    "first_name": "John",
+    "last_name": "Smith"
+}'
 ```
 
 #### Update user
-```
-curl -i -H "Content-Type: application/json" -X PUT -d '{"first_name" : "John", "last_name" : "Doe"}' http://localhost:8080/api/user/{id}
+```sh
+curl --location --request PUT 'http://localhost:8080/api/user/{id}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "first_name": "John",
+    "last_name": "Doe"
+}'
 ```
 
 #### List all users
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/api/user
+curl --location --request GET 'http://localhost:8080/api/user'
 ```
 
 #### Get User info
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/api/user/{id}
+curl --location --request GET 'http://localhost:8080/api/user/{id}'
 ```
 Expecting this structure (for the User):
 ```
@@ -70,26 +82,34 @@ Expecting this structure (for the User):
 
 #### Create Task
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"name":"My task","description" : "Description of task", "date_time" : "2016-05-25 14:25:00"}' http://localhost:8080/api/user/{user_id}/task
+curl --location --request POST 'http://localhost:8080/api/user/{id}/task' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "My task",
+    "description": "Description of task",
+    "date_time": "2016-05-25 14:25:00"
+}'
 ```
 
 #### Update Task
 ```sh
-curl -i -H "Content-Type: application/json" -X PUT -d '{"name":"My updated task"}' http://localhost:8080/api/user/{user_id}/task/{task_id}
+curl --location --request PUT 'http://localhost:8080/api/user/{user_id}/task/{task_id}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name":"My updated task"}'
 ```
 
 #### Delete Task
 ```sh
-curl -i -H "Content-Type: application/json" -X DELETE http://localhost:8080/api/user/{user_id}/task/{task_id}
+curl --location --request DELETE 'http://localhost:8080/api/user/{user_id}/task/{task_id}'
 ```
 
 #### Get Task Info
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/api/user/{user_id}/task/{task_id}
+curl --location --request GET 'http://localhost:8080/api/user/{user_id}/task/{task_id}'
 ```
 
 #### List all tasks for a user
 
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/api/user/{user_id}/task
+curl --location --request GET 'http://localhost:8080/api/user/{user_id}/task'
 ```
