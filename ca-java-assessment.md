@@ -5,12 +5,13 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * You do NOT need to create a UI for this application - only REST endpoints.
 * The application should be able to list/create/update users via REST.
 * The application should be able to list/create/update/delete tasks for users via REST.
-* Data must be persisted to a relational database.
+* Data must be persisted to a relational database (In-Memory database is acceptable).
 * You can use Frameworks(Spring Framework, Java EE etc.) Libraries etc.
 
 #### Considerations:
-* Consider database migration
-* Consider containerization
+
+* Consider usage of a tool/library to manage database schema changes
+* Consider containerization of the application
 * Treat the code as if it was going to be sent to production - what would you do to ensure it is production-ready.
 
 #### Assumptions:
@@ -42,7 +43,7 @@ order to test your application.
 
 #### Create user
 ```sh
-curl --location --request POST 'http://localhost:8080/api/user' \
+curl --location --request POST 'http://localhost:8080/api/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "username": "jsmith",
@@ -53,7 +54,7 @@ curl --location --request POST 'http://localhost:8080/api/user' \
 
 #### Update user
 ```sh
-curl --location --request PUT 'http://localhost:8080/api/user/{id}' \
+curl --location --request PUT 'http://localhost:8080/api/users/{id}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "first_name": "John",
@@ -63,12 +64,12 @@ curl --location --request PUT 'http://localhost:8080/api/user/{id}' \
 
 #### List all users
 ```sh
-curl --location --request GET 'http://localhost:8080/api/user'
+curl --location --request GET 'http://localhost:8080/api/users'
 ```
 
 #### Get User info
 ```sh
-curl --location --request GET 'http://localhost:8080/api/user/{id}'
+curl --location --request GET 'http://localhost:8080/api/users/{id}'
 ```
 Expecting this structure (for the User):
 ```
@@ -82,7 +83,7 @@ Expecting this structure (for the User):
 
 #### Create Task
 ```sh
-curl --location --request POST 'http://localhost:8080/api/user/{id}/task' \
+curl --location --request POST 'http://localhost:8080/api/users/{id}/tasks' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "My task",
@@ -93,23 +94,23 @@ curl --location --request POST 'http://localhost:8080/api/user/{id}/task' \
 
 #### Update Task
 ```sh
-curl --location --request PUT 'http://localhost:8080/api/user/{user_id}/task/{task_id}' \
+curl --location --request PUT 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"My updated task"}'
 ```
 
 #### Delete Task
 ```sh
-curl --location --request DELETE 'http://localhost:8080/api/user/{user_id}/task/{task_id}'
+curl --location --request DELETE 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}'
 ```
 
 #### Get Task Info
 ```sh
-curl --location --request GET 'http://localhost:8080/api/user/{user_id}/task/{task_id}'
+curl --location --request GET 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}'
 ```
 
 #### List all tasks for a user
 
 ```sh
-curl --location --request GET 'http://localhost:8080/api/user/{user_id}/task'
+curl --location --request GET 'http://localhost:8080/api/users/{user_id}/tasks'
 ```
