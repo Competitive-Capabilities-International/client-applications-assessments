@@ -47,8 +47,8 @@ curl --location --request POST 'http://localhost:8080/api/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "username": "jsmith",
-    "first_name": "John",
-    "last_name": "Smith"
+    "firstName": "John",
+    "lastName": "Smith"
 }'
 ```
 
@@ -57,8 +57,8 @@ curl --location --request POST 'http://localhost:8080/api/users' \
 curl --location --request PUT 'http://localhost:8080/api/users/{id}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "first_name": "John",
-    "last_name": "Doe"
+    "firstName": "John",
+    "lastName": "Doe"
 }'
 ```
 
@@ -76,8 +76,8 @@ Expecting this structure (for the User):
 { 
   "id": 1,
   "username": "jsmith",
-  "first_name": "James",
-  "last_name": "Smith"
+  "firstName": "James",
+  "lastName": "Smith"
 }
 ```
 
