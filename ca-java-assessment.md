@@ -5,7 +5,7 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * You do NOT need to create a UI for this application - only REST endpoints.
 * The application should be able to list/create/update users via REST.
 * The application should be able to list/create/update/delete tasks for users via REST.
-* Data must be persisted to a relational database (In-Memory database is acceptable).
+* Data must be persisted to an In-Memory database
 * You can use Frameworks(Spring Framework, Java EE etc.) Libraries etc.
 
 #### Considerations:
@@ -19,9 +19,7 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * Feel free to share other assumptions you made during development.
 
 #### Bonus Tasks:  
-Setup a scheduled job to check all tasks in the Database - those that have a status of "pending" and who date_time 
-has passed - print it to the console
-and update the task to "done".
+Setup a scheduled job to run every minute & fetch all tasks where status is "pending" and date time has passed and update the task status to "done".
 
 #### Distribution:
 Once you are done, please upload the application to a repository and give us access so that we can download/view/test it.
@@ -33,84 +31,5 @@ Provide us with a link to an online source code repository after completion.
 #### Evaluation Criteria:
 We should be able to clone the repo / download artifacts and run it without any installation or configuration.
 
-As a guide, below are the curl commands with the REST endpoints we are expecting to test against.  You can use these urls as a guildeline on how to design/develop your REST endpoints.  
-
-If you do not have access to curl, you can use the Postman client(https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java-Assessment.postman_collection.json) (or any other HTTP client) to perform these 
-calls in 
-order to test your application.
-
----
-
-#### Create user
-```sh
-curl --location --request POST 'http://localhost:8080/api/users' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "username": "jsmith",
-    "first_name": "John",
-    "last_name": "Smith"
-}'
-```
-
-#### Update user
-```sh
-curl --location --request PUT 'http://localhost:8080/api/users/{id}' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "first_name": "John",
-    "last_name": "Doe"
-}'
-```
-
-#### List all users
-```sh
-curl --location --request GET 'http://localhost:8080/api/users'
-```
-
-#### Get User info
-```sh
-curl --location --request GET 'http://localhost:8080/api/users/{id}'
-```
-Expecting this structure (for the User):
-```
-{ 
-  "id": 1,
-  "username": "jsmith",
-  "first_name": "James",
-  "last_name": "Smith"
-}
-```
-
-#### Create Task
-```sh
-curl --location --request POST 'http://localhost:8080/api/users/{id}/tasks' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name": "My task",
-    "description": "Description of task",
-    "date_time": "2016-05-25 14:25:00"
-}'
-```
-
-#### Update Task
-```sh
-curl --location --request PUT 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}' \
---header 'Content-Type: application/json' \
---data-raw '{"name":"My updated task"}'
-```
-
-#### Delete Task
-```sh
-curl --location --request DELETE 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}'
-```
-
-#### Get Task Info
-```sh
-curl --location --request GET 'http://localhost:8080/api/users/{user_id}/tasks/{task_id}'
-```
-
-#### List all tasks for a user
-
-```sh
-curl --location --request GET 'http://localhost:8080/api/users/{user_id}/tasks'
-```
+Here is the [Postman collection](https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java-Assessment.postman_collection.json)
+with the REST endpoints we are expecting to test against.
