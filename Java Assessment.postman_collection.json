@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"jsmith\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"jsmith\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"jsmith\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
