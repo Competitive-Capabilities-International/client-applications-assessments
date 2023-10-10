@@ -7,6 +7,8 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * The application should be able to list/create/update/delete tasks for users via REST.
 * Data must be persisted to an In-Memory database
 * You can use Frameworks(Spring Framework, Java EE etc.) Libraries etc.
+* Here is the [Postman collection](https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java-Assessment.postman_collection.json)
+with the REST endpoints we are expecting to test against.
 
 #### Considerations:
 
@@ -31,5 +33,4 @@ Provide us with a link to an online source code repository after completion.
 #### Evaluation Criteria:
 We should be able to clone the repo / download artifacts and run it without any installation or configuration.
 
-Here is the [Postman collection](https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java-Assessment.postman_collection.json)
-with the REST endpoints we are expecting to test against.
+
