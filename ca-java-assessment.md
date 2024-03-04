@@ -9,7 +9,7 @@ Create a simple Java RESTful application that manages users and tasks for those 
 * You can use Frameworks(Spring Framework, Java EE etc.) Libraries etc.
 * Here is the [Postman collection](https://github.com/Competitive-Capabilities-International/client-applications-assessments/blob/master/Java%20Assessment.postman_collection.json)
 with the REST endpoints we are expecting to test against. Ensure request bodies sent when testing your api match what is in the collection.
-* Setup a scheduled job to run every minute & fetch all tasks where status is "pending" and date time has passed and update the task status to "done".
+* Setup a scheduled job to run every minute & fetch all tasks where status is "pending" and date time is in the past and update the task status to "done".
 
 #### Considerations:
 
