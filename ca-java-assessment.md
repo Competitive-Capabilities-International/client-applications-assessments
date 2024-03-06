@@ -19,7 +19,7 @@ with the REST endpoints we are expecting to test against. Ensure request bodies 
 
 #### Assumptions:
 * Assume that the database will have a high number of tasks and users.
-* Assume the scheduled job will needs to update 1 million pending tasks when it runs.
+* Assume the scheduled job will need to update 1 million tasks
 * Feel free to share other assumptions you made during development.
 
 
